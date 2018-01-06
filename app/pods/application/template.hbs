@@ -1,0 +1,21 @@
+{{button-counter}}
+<br />
+
+Current Route: {{currentPath}}
+
+<br />
+<button onClick={{transition-to "application"}}>
+  Home
+</button>
+
+{{#link-to 'some-route'}}
+  Some Route
+{{/link-to}}
+
+{{#link-to 'data-route'}}
+  Route with Data
+{{/link-to}}
+
+
+
+{{outlet}}

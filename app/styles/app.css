@@ -1,0 +1,11 @@
+.borderless {
+  border: none;
+  padding: 3px;
+  background: #efefef;
+}
+
+a {
+  color: blue;
+  padding: 3px;
+  margin: 5px;
+}

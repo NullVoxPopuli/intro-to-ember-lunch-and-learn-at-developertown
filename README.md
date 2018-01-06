@@ -8,7 +8,8 @@ A short introduction of this app could easily go here.
 You will need the following things properly installed on your computer.
 
 * [Git](https://git-scm.com/)
-* [Node.js](https://nodejs.org/) (with npm)
+* [Node.js](https://nodejs.org/)
+* [Yarn](https://yarnpkg.com/)
 * [Ember CLI](https://ember-cli.com/)
 * [Google Chrome](https://google.com/chrome/)
 
@@ -16,7 +17,7 @@ You will need the following things properly installed on your computer.
 
 * `git clone <repository-url>` this repository
 * `cd ember-intro`
-* `npm install`
+* `yarn install`
 
 ## Running / Development
 
@@ -32,6 +33,11 @@ Make use of the many generators for code, try `ember help generate` for more det
 
 * `ember test`
 * `ember test --server`
+
+### Linting
+
+* `yarn lint:js`
+* `yarn lint:js --fix`
 
 ### Building
 
@@ -49,3 +55,36 @@ Specify what it takes to deploy your app.
 * Development Browser Extensions
   * [ember inspector for chrome](https://chrome.google.com/webstore/detail/ember-inspector/bmdblncegkenkacieihfhpjfppoconhi)
   * [ember inspector for firefox](https://addons.mozilla.org/en-US/firefox/addon/ember-inspector/)
+
+
+
+#### Sequence of commands to create this repo
+```bash
+# master version of ember-cli is needed for the new blueprint
+npm install -g https://github.com/ember-cli/ember-cli.git
+# create app named ember-intro using a specified blueprint, and using yarn instead of npm
+ember new ember-intro --blueprint module-unification-app --yarn
+# start the dev server
+ember server
+```
+
+visit localhost:4200
+remove/comment out welcome page
+
+```bash
+# super helpful library for reducing boilerplate
+ember install ember-decorators @ember-decorators/babel-transforms
+ember install ember-reactive-helpers
+```
+copy over / write button-counter component
+
+edit routes file and add
+some-route
+  sub-route-a
+  sub-route-b
+
+- make a helper
+- retrieve data from a json:api server
+  - ember-concurrency for debounced searching
+- make a test
+- deploy to something

@@ -1,0 +1,15 @@
+{{input
+  class='borderless'
+  type='number'
+  value=power
+  onChange=(action (mut power))}}
+
+<button onClick={{action 'increment'}}>
+  Increment
+</button>
+
+{{number}}<sup>{{power}}</sup> = {{squared}}
+
+<button onClick={{action 'decrement'}}>
+  Decrement
+</button>
