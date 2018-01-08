@@ -73,8 +73,14 @@ remove/comment out welcome page
 
 ```bash
 # super helpful library for reducing boilerplate
-ember install ember-decorators @ember-decorators/babel-transforms
-ember install ember-reactive-helpers
+ember install ember-decorators \
+  @ember-decorators/babel-transforms \
+  ember-reactive-helpers \
+  ember-cli-chai
+# add
+#   "parser": "babel-eslint",
+# to eslint config
+yarn add --dev babel-eslint
 ```
 copy over / write button-counter component
 
@@ -83,8 +89,5 @@ some-route
   sub-route-a
   sub-route-b
 
-- make a helper
-- retrieve data from a json:api server
-  - ember-concurrency for debounced searching
-- make a test
+- ember-concurrency for debounced searching
 - deploy to something

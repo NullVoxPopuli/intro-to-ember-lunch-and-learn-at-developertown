@@ -1,24 +1,33 @@
 import { moduleForComponent, test } from 'ember-qunit';
 import hbs from 'htmlbars-inline-precompile';
+import { withChai } from 'ember-cli-chai/qunit';
 
 moduleForComponent('button-counter', 'Integration | Component | button counter', {
   integration: true
 });
 
-test('it renders', function(assert) {
+test('calculates the power', withChai(function(expect) {
   // Set any properties with this.set('myProperty', 'value');
   // Handle any actions with this.on('myAction', function(val) { ... });
+  this.render(hbs`{{button-counter number=3 power=3}}`);
 
-  this.render(hbs`{{button-counter}}`);
+  const text = this.$().text().trim();
 
-  assert.equal(this.$().text().trim(), '');
+  expect(text).to.contain('27');
+}));
 
-  // Template block usage:
-  this.render(hbs`
-    {{#button-counter}}
-      template block text
-    {{/button-counter}}
-  `);
+test('renders the number', withChai(function(expect) {
+  this.render(hbs`{{button-counter number=3}}`);
 
-  assert.equal(this.$().text().trim(), 'template block text');
-});
+  const text = this.$().text().trim();
+
+  expect(text).to.contain('3');
+}));
+
+test('renders the power', withChai(function(expect) {
+  this.render(hbs`{{button-counter power=5}}`);
+
+  const text = this.$().text().trim();
+
+  expect(text).to.contain('5');
+}));
