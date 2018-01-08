@@ -91,3 +91,4 @@ some-route
 
 - ember-concurrency for debounced searching
 - deploy to something
+https://github.com/ef4/ember-cli-deploy-git
