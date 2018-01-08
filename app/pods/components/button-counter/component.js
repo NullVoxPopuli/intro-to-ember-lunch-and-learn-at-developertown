@@ -7,6 +7,8 @@ export default class ButtonCounter extends Component {
   // constructor-set properties override the values
   // passed via the handlebars invocation (set on the prototype).
   // legacy crap.
+  //
+  // NOTE: use legacy extends in demo
   number = this.number || 1;
   power = this.power || 2;
 
