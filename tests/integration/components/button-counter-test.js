@@ -2,25 +2,36 @@ import { module, test } from 'qunit';
 import { setupRenderingTest } from 'ember-qunit';
 import { render } from '@ember/test-helpers';
 import hbs from 'htmlbars-inline-precompile';
+import { withChai } from 'ember-cli-chai/qunit';
+
 
 module('Integration | Component | button counter', function(hooks) {
   setupRenderingTest(hooks);
 
-  test('it renders', async function(assert) {
+  test('calculates the power', withChai(async function(expect) {
     // Set any properties with this.set('myProperty', 'value');
-    // Handle any actions with this.set('myAction', function(val) { ... });
+    // Handle any actions with this.on('myAction', function(val) { ... });
+    await render(hbs`{{button-counter number=3 power=3}}`);
 
-    await render(hbs`{{button-counter}}`);
+    const text = this.$().text().trim();
 
-    assert.equal(this.element.textContent.trim(), '');
+    expect(text).to.contain('27');
+  }));
 
-    // Template block usage:
-    await render(hbs`
-      {{#button-counter}}
-        template block text
-      {{/button-counter}}
-    `);
+  test('renders the number', withChai(async function(expect) {
+    await render(hbs`{{button-counter number=3}}`);
 
-    assert.equal(this.element.textContent.trim(), 'template block text');
-  });
+    const text = this.$().text().trim();
+
+    expect(text).to.contain('3');
+  }));
+
+  test('renders the power', withChai(async function(expect) {
+    await render(hbs`{{button-counter power=5}}`);
+
+    const text = this.$().text().trim();
+
+    expect(text).to.contain('5');
+  }));
+
 });
