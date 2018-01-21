@@ -1,0 +1,32 @@
+<div class='centered'>
+  <label>Base</label>
+  {{input
+    class='borderless'
+    type='number'
+    value=number
+    onChange=(action (mut power))}}
+
+  <br />
+
+  <label>Power</label>
+  {{input
+    class='borderless'
+    type='number'
+    value=power
+    onChange=(action (mut power))}}
+
+  <br />
+
+  <button onClick={{action 'increment'}}>
+    Increment
+  </button>
+
+  <button onClick={{action 'decrement'}}>
+    Decrement
+  </button>
+
+  <h2>
+    {{number}}<sup>{{power}}</sup> = {{result}}
+  </h2>
+
+</div>
