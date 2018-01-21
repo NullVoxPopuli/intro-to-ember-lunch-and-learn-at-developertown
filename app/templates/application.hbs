@@ -1,5 +1,26 @@
 {{!-- The following component displays Ember's default welcome message. --}}
-{{welcome-page}}
+{{!-- {{welcome-page}} --}}
 {{!-- Feel free to remove this! --}}
+{{button-counter}}
+
+
+
+Current Route: {{currentPath}}
+
+<br />
+<button onClick={{transition-to "application"}}>
+  Home
+</button>
+
+{{#link-to 'some-route' class='some-route'}}
+  Some Route
+{{/link-to}}
+
+{{#link-to 'data-route' class='data-route'}}
+  Route with Data
+{{/link-to}}
+
+
+
 
 {{outlet}}

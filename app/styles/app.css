@@ -1,0 +1,27 @@
+.centered {
+  margin: 0 auto;
+  width: 200px;
+  text-align: center;
+}
+
+input {
+  margin-bottom: 15px;
+  padding: 3px 5px;
+}
+
+.borderless {
+  border: none;
+  padding: 3px;
+  background: #efefef;
+}
+
+a {
+  color: blue;
+  padding: 3px;
+  margin: 5px;
+}
+
+button {
+  /* background: none; */
+  /* border: 1px solid; */
+}
