@@ -17,18 +17,18 @@ export default class extends Component {
 
     yield timeout(DEBOUNCE_MS);
 
+    const toaster = this.get('toaster');
+
     try {
       const events = yield this.get('store').query(
-        'event', {
-          q: { name_cont: searchTerm }
-        }
+        'event', { q: { name_cont: searchTerm } }
       );
 
-      this.get('toaster').success(`${events.content.length} results found!`);
+      toaster.success(`${events.content.length} results found!`);
 
       return events;
     } catch (e) {
-      this.get('toaster').error(e);
+      toaster.error(e);
 
       return [];
     }
