@@ -2875,14 +2875,6 @@ ember-load-initializers@^1.0.0:
   dependencies:
     ember-cli-babel "^6.0.0-beta.7"
 
-ember-load@^0.0.12:
-  version "0.0.12"
-  resolved "https://registry.yarnpkg.com/ember-load/-/ember-load-0.0.12.tgz#5bc057567c85d6b7a6e0efd22accd029a59a51fe"
-  dependencies:
-    ember-cli-babel "^6.1.0"
-    ember-cli-htmlbars "^2.0.1"
-    ember-cli-version-checker "^2.0.0"
-
 ember-macro-helpers@^0.17.0:
   version "0.17.0"
   resolved "https://registry.yarnpkg.com/ember-macro-helpers/-/ember-macro-helpers-0.17.0.tgz#5e64a49f476e38c1916aff75f949455533cd1abe"
