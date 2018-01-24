@@ -79,11 +79,19 @@ now walk through the generated files.
 ember install ember-decorators \
   @ember-decorators/babel-transforms \
   ember-reactive-helpers \
-  ember-cli-chai
+  ember-cli-chai \
+  ember-concurrency \
+  ember-concurrency-decorators \
+  ember-cli-notifications \
+  ember-load
+
+
 # add
 #   parser: "babel-eslint",
 # to eslint config
-yarn add --dev babel-eslint
+yarn add --dev \
+  babel-eslint \
+  babel-plugin-transform-object-rest-spread
 ```
 
 

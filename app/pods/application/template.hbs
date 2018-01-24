@@ -1,3 +1,6 @@
+{{notification-container position="top-right"}}
+
+
 {{button-counter}}
 <br />
 
@@ -16,6 +19,12 @@ Current Route: {{currentPath}}
   Route with Data
 {{/link-to}}
 
+{{#link-to 'ember-concurrency-demo' class='data-route'}}
+  Concurrency
+{{/link-to}}
 
 
 {{outlet}}
+
+
+{{ember-load-remover}}

@@ -8,6 +8,7 @@ const Router = EmberRouter.extend({
 
 Router.map(function() {
   this.route('data-route');
+  this.route('ember-concurrency-demo');
   this.route('some-route', function() {
     this.route('sub-route-a');
     this.route('sub-route-b');

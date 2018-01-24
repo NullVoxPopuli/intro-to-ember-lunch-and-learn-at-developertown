@@ -21,7 +21,11 @@ module.exports = function(environment) {
     APP: {
       // Here you can pass flags/options to your application instance
       // when it is created
-    }
+    },
+    'ember-load': {
+       // This is the default value, if you don't set this opton
+       loadingIndicatorClass: 'loader'
+     }
   };
 
   if (environment === 'development') {

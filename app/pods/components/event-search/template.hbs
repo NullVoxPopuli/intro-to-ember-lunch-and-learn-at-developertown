@@ -1,0 +1,12 @@
+<input type="text" oninput={{perform searchEvents value="target.value"}}
+       placeholder="Search Events..." />
+
+{{#if searchEvents.isRunning}}
+  Loading...
+{{/if}}
+
+<ul>
+  {{#each searchEvents.lastSuccessful.value as |event|}}
+    <li>{{event.name}}</li>
+  {{/each}}
+</ul>
