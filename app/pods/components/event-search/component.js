@@ -12,7 +12,7 @@ export default class extends Component {
   toaster = service('toaster');
 
   @restartableTask
-  searchEvents = function * (searchTerm) {
+  search = function * (searchTerm) {
     if (isBlank(searchTerm)) { return []; }
 
     yield timeout(DEBOUNCE_MS);
@@ -20,13 +20,13 @@ export default class extends Component {
     const toaster = this.get('toaster');
 
     try {
-      const events = yield this.get('store').query(
-        'event', { q: { name_cont: searchTerm } }
+      const organizations = yield this.get('store').query(
+        'organization', { q: { name_cont: searchTerm } }
       );
 
-      toaster.success(`${events.content.length} results found!`);
+      toaster.success(`${organizations.content.length} results found!`);
 
-      return events;
+      return organizations;
     } catch (e) {
       toaster.error(e);
 

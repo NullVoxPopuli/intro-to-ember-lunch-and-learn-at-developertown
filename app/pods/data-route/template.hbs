@@ -1,5 +1,9 @@
 <h5>Some Data And Stuff</h5>
 
-{{#each model.events as |event|}}
-  {{event.name}} <br />
+{{#each model.requests as |request|}}
+  <h3>{{request.type}}</h3>
+  <p>
+    {{request.email}}
+  </p>
+  <hr />
 {{/each}}
