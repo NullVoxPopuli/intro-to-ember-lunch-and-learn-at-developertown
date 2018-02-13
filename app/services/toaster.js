@@ -37,7 +37,5 @@ export default class extends Service {
     const message = e.message;
 
     notifier.error(message, options);
-
-    console.error(e);
   }
 }

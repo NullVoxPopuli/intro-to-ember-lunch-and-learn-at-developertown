@@ -1,3 +1,4 @@
+import { find } from 'ember-native-dom-helpers';
 import { module, test } from 'qunit';
 import { setupRenderingTest } from 'ember-qunit';
 import { render } from '@ember/test-helpers';
@@ -13,7 +14,7 @@ module('Integration | Component | button counter', function(hooks) {
     // Handle any actions with this.on('myAction', function(val) { ... });
     await render(hbs`{{button-counter number=3 power=3}}`);
 
-    const text = this.$().text().trim();
+    const text = find('*').textContent.trim();
 
     expect(text).to.contain('27');
   }));
@@ -21,7 +22,7 @@ module('Integration | Component | button counter', function(hooks) {
   test('renders the number', withChai(async function(expect) {
     await render(hbs`{{button-counter number=3}}`);
 
-    const text = this.$().text().trim();
+    const text = find('*').textContent.trim();
 
     expect(text).to.contain('3');
   }));
@@ -29,7 +30,7 @@ module('Integration | Component | button counter', function(hooks) {
   test('renders the power', withChai(async function(expect) {
     await render(hbs`{{button-counter power=5}}`);
 
-    const text = this.$().text().trim();
+    const text = find('*').textContent.trim();
 
     expect(text).to.contain('5');
   }));

@@ -18,6 +18,15 @@ module.exports = {
   rules: {
   },
   overrides: [
+    {
+      files: [
+        'app/adapters/application.js'
+      ],
+      rules: {
+        'ember/avoid-leaking-state-in-ember-objects': 0
+
+      }
+    },
     // node files
     {
       files: [
