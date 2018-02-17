@@ -10,6 +10,8 @@ export default class ButtonCounter extends Component {
     return Math.pow(this.number, this.power);
   }
 
+  // `number`, which is a watched key.
+  // `set` is still required whenever you're setting things that are watched
   @action
   increment() {
     this.set('number', this.number + 1);
