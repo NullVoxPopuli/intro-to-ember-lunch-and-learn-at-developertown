@@ -18,9 +18,10 @@ export default class extends Component {
     yield timeout(DEBOUNCE_MS);
 
     const toaster = this.get('toaster');
+    const { store } = this;
 
     try {
-      const organizations = yield this.get('store').query(
+      const organizations = yield store.query(
         'organization', { q: { name_cont: searchTerm } }
       );
 
